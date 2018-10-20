@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-let styles = require('./Home.scss');
+import styles from './Home.css';
 
 export default class Home extends React.Component {
   render() {

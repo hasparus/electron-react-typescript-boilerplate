@@ -1,9 +1,9 @@
-import '../utils/enzymeConfig';
+import '../../test/enzymeConfig';
 
 import { spy } from 'sinon';
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Counter from '../../app/components/Counter';
+import Counter from './Counter';
 
 const CounterAny = Counter as any;
 
