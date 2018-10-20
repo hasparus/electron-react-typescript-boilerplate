@@ -8,6 +8,7 @@ const { dependencies: externals } = require('./app/package.json');
 module.exports = {
   module: {
     loaders: [
+      { test: /\.g4/, loader: 'antlr4-webpack-loader' },
       {
         test: /\.tsx?$/,
         loaders: [
@@ -20,7 +21,7 @@ module.exports = {
                 '@babel/typescript',
                 ['@babel/env', { modules: false }],
               ],
-              plugins: ['emotion'],
+              plugins: ['emotion', '@babel/plugin-proposal-class-properties'],
             },
           },
         ],

@@ -111,6 +111,7 @@
   "homepage": "https://github.com/irath96/electron-react-typescript-boilerplate#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
@@ -127,6 +128,7 @@
     "@types/react-router-redux": "^5.0.2",
     "@types/redux-logger": "^3.0.0",
     "@types/sinon": "^4.0.0",
+    "antlr4-webpack-loader": "^0.1.1",
     "asar": "^0.14.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-emotion": "^9.2.11",
