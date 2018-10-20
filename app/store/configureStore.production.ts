@@ -4,13 +4,10 @@ import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers';
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 const router = routerMiddleware(history);
 const enhancer = applyMiddleware(thunk, router);
 
-export = {
-  history,
-  configureStore(initialState: Object | void) {
-    return createStore(rootReducer, initialState, enhancer);
-  }
-};
+export function configureStore(initialState: Object | void) {
+  return createStore(rootReducer, initialState, enhancer);
+}

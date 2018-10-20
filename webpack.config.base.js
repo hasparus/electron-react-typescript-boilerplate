@@ -3,20 +3,34 @@
  */
 
 const path = require('path');
-const {
-  dependencies: externals
-} = require('./app/package.json');
+const { dependencies: externals } = require('./app/package.json');
 
 module.exports = {
   module: {
-    loaders: [{
-      test: /\.tsx?$/,
-      loaders: ['react-hot-loader/webpack', 'ts-loader'],
-      exclude: /node_modules/
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }]
+    loaders: [
+      {
+        test: /\.tsx?$/,
+        loaders: [
+          'react-hot-loader/webpack',
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/react',
+                '@babel/typescript',
+                ['@babel/env', { modules: false }],
+              ],
+              plugins: ['emotion'],
+            },
+          },
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
+    ],
   },
 
   output: {
@@ -24,19 +38,16 @@ module.exports = {
     filename: 'bundle.js',
 
     // https://github.com/webpack/webpack/issues/1114
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
   },
 
   // https://webpack.github.io/docs/configuration.html#resolve
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.json'],
-    modules: [
-      path.join(__dirname, 'app'),
-      'node_modules',
-    ]
+    modules: [path.join(__dirname, 'app'), 'node_modules'],
   },
 
   plugins: [],
 
-  externals: Object.keys(externals || {})
+  externals: Object.keys(externals || {}),
 };

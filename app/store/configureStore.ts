@@ -1,9 +1,5 @@
-let configureStore: any;
-
 if (process.env.NODE_ENV === 'production') {
-  configureStore = require('./configureStore.production');
+  module.exports = require('./configureStore.production');
 } else {
-  configureStore = require('./configureStore.development');
+  module.exports = require('./configureStore.development');
 }
-
-export = configureStore;

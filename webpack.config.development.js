@@ -27,19 +27,6 @@ module.exports = merge(baseConfig, {
     loaders: [
       {
         test: /\.global\.css$/,
-        loaders: ['style-loader', 'css-loader?sourceMap'],
-      },
-
-      {
-        test: /^((?!\.global).)*\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-        ],
-      },
-
-      {
-        test: /\.global\.css$/,
         use: [
           {
             loader: 'style-loader',
@@ -53,7 +40,7 @@ module.exports = merge(baseConfig, {
         ],
       },
       {
-        test: /^((?!\.global).)*\.scss$/,
+        test: /^((?!\.global).)*\.css$/,
         use: [
           {
             loader: 'style-loader',
@@ -63,7 +50,6 @@ module.exports = merge(baseConfig, {
             options: {
               modules: true,
               sourceMap: true,
-              importLoaders: 1,
               localIdentName: '[name]__[local]__[hash:base64:5]',
             },
           },
