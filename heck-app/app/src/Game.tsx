@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
+import { DoStuff } from './Core/Game';
 
 type BoardContainerProps = {
   size: string;
@@ -62,6 +63,8 @@ export class Game extends React.Component<{}, State> {
   };
 
   render() {
+    const date = new Date();
+
     const { board, player } = this.state;
     return (
       <article
@@ -70,14 +73,17 @@ export class Game extends React.Component<{}, State> {
           fontSize: '20px',
         }}
       >
-        <BoardContainer size="200px">
-          {board.map((rune, i) => (
-            <GameCell key={i} onClick={() => this.changeCell(i)}>
-              {rune}
-            </GameCell>
-          ))}
-        </BoardContainer>
-        <span>Current player: {player}</span>
+        <div>
+          <textarea>Dupa dupa dupa</textarea>
+          <BoardContainer size="200px">
+            {board.map((rune, i) => (
+              <GameCell key={i} onClick={() => this.changeCell(i)}>
+                {rune}
+              </GameCell>
+            ))}
+          </BoardContainer>
+        </div>
+        <span>Current player: {player}{DoStuff(player.charCodeAt(0))}</span>
       </article>
     );
   }

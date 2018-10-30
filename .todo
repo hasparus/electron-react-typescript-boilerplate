@@ -1,0 +1,4 @@
+cd D:\Git
+mkdir heck
+mv -p electron-react-typescript-boilerplate heck/heck-app
+mv -p heck/heck-app/app/Core heck/heck-core

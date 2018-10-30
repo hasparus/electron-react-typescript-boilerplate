@@ -1,0 +1,27 @@
+{
+  "name": "heck-core",
+  "productName": "heck-core",
+  "version": "1.0.0-alpha.0",
+  "description": "lol",
+  "main": "../bin/heck-core/index.js",
+  "author": {
+    "name": "Cheessie Stew",
+    "email": "serindrack@gmail.com",
+    "url": "https://github.com/ChessieStew"
+  },
+  "scripts": {
+    "antlr4ts": "antlr4ts -visitor ./heck.g4 -o ./Evaluator",
+    "postinstall": "npm rebuild --runtime=electron --target=1.6.6 --disturl=https://atom.io/download/atom-shell --build-from-source",
+    "tsc": "tsc",
+    "watch": "tsc --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "antlr4-webpack-loader": "^0.1.1",
+    "antlr4ts": "^0.4.1-alpha.0"
+  },
+  "devDependencies": {
+    "antlr4ts-cli": "^0.4.0-alpha.4",
+    "typescript": "^3.1.4"
+  }
+}

@@ -1,33 +1,21 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "es5",
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "jsx": "react",
-    "lib": ["dom", "es6", "dom.iterable", "scripthost"],
-    "types": [],
-
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
+    "module": "esnext",
+    "strict": true,
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-
-    "sourceMap": true,
-
-    "outDir": "dist"
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "composite": true
   },
-  "files": ["app/index.tsx"],
-  "include": [
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "test/**/*.ts",
-    "test/**/*.tsx",
-    "node_modules/@types/**/*.d.ts"
-  ],
-  "exclude": ["dist"]
+  "references": [
+    {
+      "path": "./heck-core"
+    },
+    {
+      "path": "./heck-app"
+    }
+]
 }
