@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import {DoStuff} from 'heck-core'
-import { string } from 'prop-types';
+import { DoStuff } from 'heck-core';
 
 type BoardContainerProps = {
   size: string;
@@ -22,10 +21,10 @@ function nextPlayer(currentPlayer: Rune) {
 }
 
 const initialState = {
-  board : Array.from({ length: 9 }).fill(' ') as Rune[],
-  player : 'X' as Rune,
-  text : '',
-  translated : ''
+  board: Array.from({ length: 9 }).fill(' ') as Rune[],
+  player: 'X' as Rune,
+  text: '',
+  translated: '',
 };
 
 type State = typeof initialState;
@@ -65,8 +64,7 @@ export class Game extends React.Component<{}, State> {
     }
   };
 
-  textChange(e: React.ChangeEvent<HTMLInputElement>)
-  {
+  textChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.state.text = e.currentTarget.value;
     this.state.translated = DoStuff(this.state.text);
     this.setState(this.state);
@@ -84,8 +82,8 @@ export class Game extends React.Component<{}, State> {
         }}
       >
         <div>
-          <textarea value={this.state.text} onChange={this.textChange}></textarea>
-          <textarea value={this.state.translated}></textarea>
+          <textarea value={this.state.text} onChange={this.textChange} />
+          <textarea value={this.state.translated} />
 
           <BoardContainer size="200px">
             {board.map((rune, i) => (
@@ -95,7 +93,10 @@ export class Game extends React.Component<{}, State> {
             ))}
           </BoardContainer>
         </div>
-        <span>Current player: {player}{DoStuff(player.charCodeAt(0))}</span>
+        <span>
+          Current player: {player}
+          {DoStuff(player.charCodeAt(0))}
+        </span>
       </article>
     );
   }
