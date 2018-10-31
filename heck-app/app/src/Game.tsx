@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
-import { DoStuff } from 'heck-core';
 
 type BoardContainerProps = {
   size: string;
@@ -64,9 +63,9 @@ export class Game extends React.Component<{}, State> {
     }
   };
 
-  textChange(e: React.ChangeEvent<HTMLInputElement>) {
+  textChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     this.state.text = e.currentTarget.value;
-    this.state.translated = DoStuff(this.state.text);
+    // this.state.translated = doStuff(this.state.text);
     this.setState(this.state);
   }
 
@@ -95,7 +94,7 @@ export class Game extends React.Component<{}, State> {
         </div>
         <span>
           Current player: {player}
-          {DoStuff(player.charCodeAt(0))}
+          {/* {doStuff(player.charCodeAt(0))} */}
         </span>
       </article>
     );

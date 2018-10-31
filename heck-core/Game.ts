@@ -1,5 +1,3 @@
-export function DoStuff(x: number){
-    return x + 5;
-};
-
-
+export function doStuff(x: number) {
+  return x + 5;
+}
