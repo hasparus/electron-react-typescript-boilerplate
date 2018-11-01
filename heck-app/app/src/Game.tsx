@@ -1,5 +1,8 @@
 import React from 'react';
 import styled, { css } from 'react-emotion';
+import * as core from 'heck-core';
+
+console.log(core);
 
 type BoardContainerProps = {
   size: string;

@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "dev:app": "yarn workspace heck-app start-hot",
+    "dev:app": "yarn workspace heck-app dev",
     "dev:core": "yarn workspace heck-core watch"
   },
   "devDependencies": {
